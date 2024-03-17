@@ -1,0 +1,10 @@
+cat
+butterfly
+icecream
+house
+boat
+flower
+eye
+book
+car
+tree
