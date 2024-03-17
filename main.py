@@ -52,8 +52,16 @@ def pick_random_word(words):
 print("Hello, welcome to my program!")
 filename = "ordlista.txt"
 words = load_from_txt(filename)
-random_word = pick_random_word(words)
+random_word = pick_random_word(words).rstrip()
 print("slumpmässigt valt ord:", random_word)
+
+font = pygame.font.Font('freesansbold.ttf', 32)
+text = font.render(random_word, True, BLACK, WHITE)
+
+textRect = text.get_rect()
+textRect.center = (screen_width // 2, 25)
+
+
 
 def main():
     # drawing and mouse code
@@ -111,6 +119,8 @@ def main():
         screen.blit(erase_icon, erase_icon_pos)
         screen.blit(colour_icon, colour_icon_pos)
         pygame.draw.rect(screen, colours[colour], pygame.Rect(icon_margin, icon_margin, 65, 65 ))
+        screen.blit(text, textRect)
+
 
         # define icon rectangles for collision detection
        # draw_icon_rect = draw_icon.get_rect(topleft = draw_icon_pos)
