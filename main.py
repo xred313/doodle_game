@@ -59,7 +59,7 @@ def main():
     # drawing and mouse code
     # variable to track drawing
     colour = 0
-    colours = [(0, 0, 0), (0, 0, 255), (0, 255, 0), (255, 0, 0)]
+    colours = [(0, 0, 0), (0, 0, 255), (0, 255, 0), (255, 0, 0), (255, 255, 255)]
     drawing = False
     last_pos = None
     drawn_lines = [] # list to store the lines
@@ -78,7 +78,7 @@ def main():
                     elif colour_icon_rect.collidepoint(event.pos):
                         # implement colour selection logic here
                         colour = colour + 1
-                        colour = colour % 4     # modulo so the list repeats and you can switch between colours
+                        colour = colour % len(colours)    # modulo so the list repeats and you can switch between colours
 
 
 
@@ -110,7 +110,7 @@ def main():
        # screen.blit(draw_icon, draw_icon_pos)
         screen.blit(erase_icon, erase_icon_pos)
         screen.blit(colour_icon, colour_icon_pos)
-
+        pygame.draw.rect(screen, colours[colour], pygame.Rect(icon_margin, icon_margin, 65, 65 ))
 
         # define icon rectangles for collision detection
        # draw_icon_rect = draw_icon.get_rect(topleft = draw_icon_pos)
