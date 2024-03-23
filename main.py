@@ -1,4 +1,4 @@
-
+import os
 
 import pygame
 import random
@@ -37,6 +37,17 @@ done_icon_pos = (icon_margin, icon_margin * 4 + icon_size[1] * 3)
 erase_icon_pos = (icon_margin, icon_margin * 2 + icon_size[1])
 colour_icon_pos = (icon_margin, icon_margin * 3 + icon_size[1] * 2)
 
+# gör en save icon och om man trycker på den så kör man funktionen för att spara skärmen som fil
+
+#def save_canvas(screen):
+    #if not os.path.exists("saved_images"):# create directory to save image
+        #os.makedirs("saved_image")
+# generate a unique file name
+#image_number = len(os.listdir()) + 1
+#file_name = f"saved_images/doodle_{image_number}.png"
+# save the canvas as an image file
+#pygame.image.save(screen,file_name)
+
 # Function to read a text file and return one randomly picked word from the file which contains a list of 1o words
 def load_from_txt(filename):
     with open(filename, 'r') as file:
@@ -47,7 +58,7 @@ def load_from_txt(filename):
 
 
 def pick_random_word(words):
-    return random.choice(words)
+    return random.choice(words).rstrip()
 
 
 
@@ -55,12 +66,11 @@ def pick_random_word(words):
 print("Hello, welcome to my program!")
 filename = "ordlista.txt"
 words = load_from_txt(filename)
-random_word = pick_random_word(words).rstrip()
+random_word = pick_random_word(words)
 print("slumpmässigt valt ord:", random_word)
 
 font = pygame.font.Font('freesansbold.ttf', 32)
 text = font.render(random_word, True, BLACK, WHITE)
-
 textRect = text.get_rect()
 textRect.center = (screen_width // 2, 25)
 
@@ -76,6 +86,8 @@ def main():
     drawn_lines = [] # list to store the lines
     clock = pygame.time.Clock()    # frame rate
 
+
+
     running = True
     while running:
         for event in pygame.event.get():
@@ -88,7 +100,12 @@ def main():
                         drawn_lines = []
 
                     if done_icon_rect.collidepoint(event.pos):
-                            running = False
+                        random_word = pick_random_word(words).rstrip()
+                        print("slumpmässigt valt ord:", random_word)
+                        drawing = False
+                        drawn_lines = []
+                        global text
+                        text = font.render(random_word, True, BLACK, WHITE)
 
                     elif colour_icon_rect.collidepoint(event.pos):
                         # implement colour selection logic here
