@@ -1,5 +1,3 @@
-import os
-
 import pygame
 import random
 
@@ -15,38 +13,37 @@ pygame.display.set_caption("doodle noodle")
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-
-
 # icon images for eraser, pen and colouring
 done_icon = pygame.image.load("done_icon.png")
-#draw_icon = pygame.image.load("draw_icon.png")
+# draw_icon = pygame.image.load("draw_icon.png")
 erase_icon = pygame.image.load("rubber_icon.png")
 colour_icon = pygame.image.load("colour_icon.png")
 
 # icon images n size
 icon_size = (50, 50)
 done_icon = pygame.transform.scale(done_icon, icon_size)
-#draw_icon = pygame.transform.scale(draw_icon, icon_size)
+# draw_icon = pygame.transform.scale(draw_icon, icon_size)
 erase_icon = pygame.transform.scale(erase_icon, icon_size)
 colour_icon = pygame.transform.scale(colour_icon, icon_size)
 
 # icon positons
 icon_margin = 20
 done_icon_pos = (icon_margin, icon_margin * 4 + icon_size[1] * 3)
-#draw_icon_pos = (icon_margin, icon_margin)
+# draw_icon_pos = (icon_margin, icon_margin)
 erase_icon_pos = (icon_margin, icon_margin * 2 + icon_size[1])
 colour_icon_pos = (icon_margin, icon_margin * 3 + icon_size[1] * 2)
 
+
 # gör en save icon och om man trycker på den så kör man funktionen för att spara skärmen som fil
 
-#def save_canvas(screen):
-    #if not os.path.exists("saved_images"):# create directory to save image
-        #os.makedirs("saved_image")
+# def save_canvas(screen):
+# if not os.path.exists("saved_images"):# create directory to save image
+# os.makedirs("saved_image")
 # generate a unique file name
-#image_number = len(os.listdir()) + 1
-#file_name = f"saved_images/doodle_{image_number}.png"
+# image_number = len(os.listdir()) + 1
+# file_name = f"saved_images/doodle_{image_number}.png"
 # save the canvas as an image file
-#pygame.image.save(screen,file_name)
+# pygame.image.save(screen,file_name)
 
 # Function to read a text file and return one randomly picked word from the file which contains a list of 1o words
 def load_from_txt(filename):
@@ -54,13 +51,12 @@ def load_from_txt(filename):
         words = file.readlines()
     return words
 
+
 # function that picks a random word :)
 
 
 def pick_random_word(words):
     return random.choice(words).rstrip()
-
-
 
 
 print("Hello, welcome to my program!")
@@ -75,7 +71,6 @@ textRect = text.get_rect()
 textRect.center = (screen_width // 2, 25)
 
 
-
 def main():
     # drawing and mouse code
     # variable to track drawing
@@ -83,10 +78,8 @@ def main():
     colours = [(0, 0, 0), (0, 0, 255), (0, 255, 0), (255, 0, 0), (255, 255, 255)]
     drawing = False
     last_pos = None
-    drawn_lines = [] # list to store the lines
-    clock = pygame.time.Clock()    # frame rate
-
-
+    drawn_lines = []  # list to store the lines
+    clock = pygame.time.Clock()  # frame rate
 
     running = True
     while running:
@@ -94,7 +87,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1: # left mouse button
+                if event.button == 1:  # left mouse button
                     if erase_icon_rect.collidepoint(event.pos):
                         drawing = False
                         drawn_lines = []
@@ -110,7 +103,7 @@ def main():
                     elif colour_icon_rect.collidepoint(event.pos):
                         # implement colour selection logic here
                         colour = colour + 1
-                        colour = colour % len(colours)    # modulo so the list repeats and you can switch between colours
+                        colour = colour % len(colours)  # modulo so the list repeats and you can switch between colours
 
 
 
@@ -126,39 +119,36 @@ def main():
                 if drawing:
                     current_pos = event.pos
                     if last_pos:
-                        pygame.draw.line(screen, colours[colour], last_pos, current_pos, 30) # mouse n drawing line settings
+                        pygame.draw.line(screen, colours[colour], last_pos, current_pos,
+                                         30)  # mouse n drawing line settings
                         drawn_lines.append((last_pos, current_pos, colours[colour]))
                     last_pos = current_pos
-
-
 
         for line in drawn_lines:
             pygame.draw.line(screen, line[2], line[0], line[1], 5)
 
-    # draw a line from last_pos to current_pos
+        # draw a line from last_pos to current_pos
         # draw icons
-       # screen.blit(draw_icon, draw_icon_pos)
+        # screen.blit(draw_icon, draw_icon_pos)
         screen.blit(done_icon, done_icon_pos)
         screen.blit(erase_icon, erase_icon_pos)
         screen.blit(colour_icon, colour_icon_pos)
-        pygame.draw.rect(screen, colours[colour], pygame.Rect(icon_margin, icon_margin, 65, 65 ))
+        pygame.draw.rect(screen, colours[colour], pygame.Rect(icon_margin, icon_margin, 65, 65))
         screen.blit(text, textRect)
 
-
         # define icon rectangles for collision detection
-       # draw_icon_rect = draw_icon.get_rect(topleft = draw_icon_pos)
+        # draw_icon_rect = draw_icon.get_rect(topleft = draw_icon_pos)
         done_icon_rect = done_icon.get_rect(topleft=done_icon_pos)
         erase_icon_rect = erase_icon.get_rect(topleft=erase_icon_pos)
-        colour_icon_rect = colour_icon.get_rect(topleft = colour_icon_pos)
-
+        colour_icon_rect = colour_icon.get_rect(topleft=colour_icon_pos)
 
         pygame.display.flip()
         # Draw game elements here
         screen.fill(WHITE)
         clock.tick(60)
 
-
     pygame.quit()
+
 
 if __name__ == "__main__":
     main()

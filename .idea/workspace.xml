@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cdd2d4d-e624-4e74-8e0e-11135fe5550e" name="Changes" comment="completed(done) button that ends the program when the player feels finished drawing.">
-      <change afterPath="$PROJECT_DIR$/done_icon.png" afterDir="false" />
+    <list default="true" id="5cdd2d4d-e624-4e74-8e0e-11135fe5550e" name="Changes" comment="completed (done button) clears the screen and changes the word instead of ending the program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -106,7 +105,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1710939200802</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="completed (done button) clears the screen and changes the word instead of ending the program">
+      <option name="closed" value="true" />
+      <created>1711209419606</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1711209419606</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +132,7 @@
     <MESSAGE value="white colour and show current colour in a box topleft corner" />
     <MESSAGE value="added a text to show what to draw" />
     <MESSAGE value="completed(done) button that ends the program when the player feels finished drawing." />
-    <option name="LAST_COMMIT_MESSAGE" value="completed(done) button that ends the program when the player feels finished drawing." />
+    <MESSAGE value="completed (done button) clears the screen and changes the word instead of ending the program" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed (done button) clears the screen and changes the word instead of ending the program" />
   </component>
 </project>
