@@ -4,7 +4,7 @@ icecream
 house
 boat
 flower
-eye
+dog
 book
 car
 tree

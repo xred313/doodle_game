@@ -1,3 +1,5 @@
+import os
+
 import pygame
 import random
 
@@ -37,13 +39,13 @@ colour_icon_pos = (icon_margin, icon_margin * 3 + icon_size[1] * 2)
 # gör en save icon och om man trycker på den så kör man funktionen för att spara skärmen som fil
 
 # def save_canvas(screen):
-# if not os.path.exists("saved_images"):# create directory to save image
-# os.makedirs("saved_image")
+if not os.path.exists("saved_images"): # create directory to save image
+    os.makedirs("saved_images")
 # generate a unique file name
-# image_number = len(os.listdir()) + 1
-# file_name = f"saved_images/doodle_{image_number}.png"
+image_number = len(os.listdir()) + 1
+file_name = f"saved_images/doodle_{image_number}.png"
 # save the canvas as an image file
-# pygame.image.save(screen,file_name)
+pygame.image.save(screen,file_name)
 
 # Function to read a text file and return one randomly picked word from the file which contains a list of 1o words
 def load_from_txt(filename):
@@ -53,7 +55,6 @@ def load_from_txt(filename):
 
 
 # function that picks a random word :)
-
 
 def pick_random_word(words):
     return random.choice(words).rstrip()
@@ -105,9 +106,6 @@ def main():
                         colour = colour + 1
                         colour = colour % len(colours)  # modulo so the list repeats and you can switch between colours
 
-
-
-
                     else:
                         drawing = True
                         last_pos = event.pos
@@ -152,3 +150,352 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

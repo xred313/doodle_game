@@ -7,6 +7,7 @@
     <list default="true" id="5cdd2d4d-e624-4e74-8e0e-11135fe5550e" name="Changes" comment="completed (done button) clears the screen and changes the word instead of ending the program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordlista.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ordlista.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1711209419606</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="completed (done button) clears the screen and changes the word instead of ending the program">
+      <option name="closed" value="true" />
+      <created>1711612647744</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1711612647745</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
